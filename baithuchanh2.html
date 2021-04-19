@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài thực hành 2</title>
+</head>
+<body>
+<SCRIPT>
+    // let Circle = function (bankinh ){
+    //     this.bankinh= bankinh;
+    //     this.getbankinh = function (){
+    //         return bankinh;
+    //     };
+    //     this.getArea = function (){
+    //         return Math.PI * bankinh*bankinh;
+    //     };
+    //
+    // }
+    // let circle = new Circle(2);
+    // let bankinh = circle.getbankinh();
+    // let area = circle.getArea();
+    // alert(" bán kính " + bankinh  + " diện tích là " + area);
+
+
+
+let hinhtron = function ( bankinh){
+    this.bankinh = bankinh ;
+     this.getbankinh = function (){
+        return bankinh;
+    };
+     this.getarea = function (){
+         return Math.PI * bankinh * bankinh;
+     };
+};
+let a = new hinhtron(2);
+let bankinh = a.getbankinh();
+let area = a.getarea();
+document.write( ' diện tích hình tròn là ' + area);
+
+
+
+
+
+
+
+
+
+
+
+
+</SCRIPT>
+</body>
+</html>
