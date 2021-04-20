@@ -5,49 +5,41 @@
     <title>bài thực hành 2</title>
 </head>
 <body>
-<SCRIPT>
-    // let Circle = function (bankinh ){
-    //     this.bankinh= bankinh;
-    //     this.getbankinh = function (){
-    //         return bankinh;
-    //     };
-    //     this.getArea = function (){
-    //         return Math.PI * bankinh*bankinh;
-    //     };
-    //
-    // }
-    // let circle = new Circle(2);
-    // let bankinh = circle.getbankinh();
-    // let area = circle.getArea();
-    // alert(" bán kính " + bankinh  + " diện tích là " + area);
+<script>
+    let mydate = function (day, mounth,year){
+        this.day = day;
+        this.mounth = mounth;
+        this.year = year ;
 
-
-
-let hinhtron = function ( bankinh){
-    this.bankinh = bankinh ;
-     this.getbankinh = function (){
-        return bankinh;
+    this.getday =function (){
+        return this.day;
+    }
+    this.getmounth= function (){
+        return this.mounth;
+    }
+    this.getyear = function (){
+        return this.year;
+    }
+    this.setday = function (day){
+        this.day=day
     };
-     this.getarea = function (){
-         return Math.PI * bankinh * bankinh;
-     };
-};
-let a = new hinhtron(2);
-let bankinh = a.getbankinh();
-let area = a.getarea();
-document.write( ' diện tích hình tròn là ' + area);
+    this.setmounth = function (mounth){
+        this.mounth = mounth;
+    };
+    this.setyear = function (year){
+        this.year = year;
+    };}
+    let date = new mydate(10,10,2010);
+    let day = date.getday();
+    let mounth = date.getmounth();
+    let year = date. getyear();
+
+    alert(day +'/' + mounth +'/'+year);
 
 
 
 
 
-
-
-
-
-
-
-
-</SCRIPT>
+</script>
 </body>
 </html>
