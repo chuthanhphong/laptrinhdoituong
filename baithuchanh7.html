@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let  Temperature = function (c){
+        this.c= c;
+        this.f = function (){
+            return 1.8*c +32
+        };
+        this.k = function (){
+            return c + 273.15
+        };
+    }
+let nhietdo = new Temperature(25);
+    alert('giá trị của độ F là ' + nhietdo.f() + ' giá trị của độ k là  ' + nhietdo.k())
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
