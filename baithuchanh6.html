@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id='mycanvas' style="border: 1px solid #d3d3d3" height="768px" width="1368px"></canvas>
+<script>
+   let HCN = function (a,b){
+       this.a =a;
+       this.b =b;
+       this.chuvi = function (){
+           return (a+b)*2
+       };
+       this.dientich=function (){
+           return a*b;
+       };
+       this.vehinh = function (){
+          let ctx= document.getElementById('mycanvas').getContext('2d');
+           ctx.beginPath()
+           ctx.fillStyle= "#FF0000";
+           ctx.fillRect(0,0,this.a,this.b);
+           ctx.stroke();
+       }
+   }
+    let total = new HCN(600,300);
+   total.vehinh()
+   alert('chu vi là ' + total.chuvi() + ' diện tích là' + total.dientich());
+</script>
+</body>
+</html>
