@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Mobile(name, battery) {
+        this.name = name;
+        this.battery = battery;
+        this.status = true;
+        this.checkStatus = function checkStatus() {
+            this.status ? alert('Mobile is turn on') : alert('Mobile is turn off');
+        }
+        this.turnOnOff = function turnOnOff() {
+            return this.status = this.status ? false : true;
+        }
+        this.chargeBattery = function chargeBattery() {
+            return this.battery++;
+        }
+        this.message = "";
+        this.setMessage = function (message) {
+            if (this.status) {
+                this.message = message; //lưu tin nhắn đang soạn thảo
+                this.battery--;
+            }
+        }
+        this.getMessage = function () {
+            if (this.status) {
+                this.battery--;
+                return this.message; //lưu tin nhắn trong hộp thư đến
+            }
+        }
+        this.sendMessage = function (message, mobile) {
+            if (this.status) {
+                mobile.setMessage(message); //lưu tin nhắn đã gửi
+                this.battery--;
+            }
+        }
+    }
+    let nokia = new Mobile("Nokia", 100);
+    let iphone = new Mobile("Iphone", 100);
+    nokia.sendMessage('I am nokia', iphone);
+    let message = iphone.getMessage();
+    document.write(message +'<br/>');
+    document.write(nokia.battery+'<br/>');
+    document.write(iphone.battery+'<br/>');
+    document.write(nokia.chargeBattery()+'<br/>');
+    document.write(iphone.chargeBattery()+'<br/>');
+    nokia.checkStatus();
+    document.write(nokia.turnOnOff());
+    nokia.checkStatus();
+    iphone.checkStatus();
+</script>
+</body>
+</html>
