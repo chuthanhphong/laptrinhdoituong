@@ -1,10 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>bài thực hành 3</title>
 </head>
 <body>
-$END$
+<canvas id="canvas" style="border: 1px solid  #d3d3d3" width="1368px" height="768px"></canvas>
+<script>
+    function hinhtron(x, y, radius) {
+        this.x = x;
+        this.y = y;
+        this.radius = radius;
+    }
+
+    // function vehinhtron(){
+    //         let ctx = document.getElementById( 'canvas').getContext("2d");
+    //         let circle = new hinhtron(500,500,80);
+    //         ctx.beginPath();
+    //         ctx.arc(circle.x, circle.y, circle.radius, 0, 2*Math.PI);
+    //         ctx.fill();
+    // }
+    // vehinhtron()
+    // vẽ hình tròn ngẫu nhiên
+    //  function hinhtron(x, y, radius) {
+    //      this.x = x;
+    //      this.y = y;
+    //      this.radius = radius;
+    //  }
+    //
+    //  function vehinhtron() {
+    //     let cxt = document.getElementById('canvas');
+    //     let radius = Math.floor(Math.random()*80);
+    //     let circle = new hinhtron(500,500, radius);
+    //     cxt.beginPath();
+    //     cxt.arc (hinhtron.x,hinhtron.y, radius, 0, 2*Math.PI);
+    //     cxt.fill()}
+    //  vehinhtron()
+    // vẽ hình tròn màu ngẫu nhiên
+
+    function getrandomhex (){
+        return  Math.floor(Math.random()*255);
+    }
+    function getrandomcolor(){
+        let red = getrandomhex();
+        let green = getrandomhex();
+        let blue = getrandomhex();
+        return "rgb("+red+","+ blue +"," + green+")";
+    }
+    function creatcircle (){
+        let ctx = document.getElementById('canvas').getContext("2d");;
+        let radius = Math.floor(Math.random()*80)
+        let circle = new hinhtron(500,500, radius);
+        ctx.beginPath();
+        ctx.arc(circle.x,circle.y, circle.radius, 0 , 2*Math.PI);
+        ctx.fillStyle = getrandomcolor() ;
+        ctx.fill();
+    }
+    creatcircle()
+
+</script>
 </body>
 </html>

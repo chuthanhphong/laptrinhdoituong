@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="luyentapoto.js"></script>
+</head>
+<body>
+<canvas id ='oto' style="border: 1px solid black" height="1000px" width="1000px"></canvas>
+<img style="display: none" id = "img1" src="Car_Down.png" height="300" width="300"/>
+<img style="display: none" id = "img2" src="Car_Up.png" height="300" width="300"/>
+<img style="display: none" id="img3" src="Car_Down.png" height="300" width="300"/>
+<img style="display: none" id = "img4" src="Car_Right.png" height="300" width="300"/>
+<script>
+    let car12 = new Car("T1",150,150);
+    let canvas = document.getElementById('oto')
+
+    function move(evt){
+        console.log(evt.key);
+        switch (evt.key){
+            case "ArrowUp":
+                car12.direction = 'len';
+                break;
+            case "ArrowDown":
+                car12.direction = 'xuong';
+                break;
+            case "ArrowLeft":
+                car12.direction = 'trai';
+                break;
+            case "ArrowRight":
+                car12.direction = 'phai';
+                break;
+        }
+    }
+    function xoamanhinh(){
+        let ctx = canvas.getContext('2d');
+        ctx.clearRect(0,0,canvas.width,canvas.height)
+    };
+    function main (){
+        xoamanhinh();
+        car12.check();
+        car12.dichuyen();
+        car12.draw(canvas);
+    }
+    setInterval(main,1)
+    window.addEventListener('keydown',move);
+    window.addEventListener('keypress',move);
+    window.addEventListener('keyup',move);
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
